@@ -5,9 +5,9 @@ class PlayerStats {
     this.playerStatsTarget.innerHTML = playerStatsBox;
   }
 
-  drawPlayerStats() {
-    game.lowHpSound.pause();
-    game.lowHpSound.volume = 0.05;
+  usuarioStats() {
+    game.sonidoBajo.pause();
+    game.sonidoBajo.volume = 0.05;
 
     document.querySelector('.player--pokemon-name').innerHTML = game.pokemonUsuario.name;
     document.querySelector('.player--pokemon-health').innerHTML = game.pokemonUsuario.health;
@@ -23,13 +23,13 @@ class PlayerStats {
     } else if (game.pokemonUsuario.healthPercent > 25) {
       healthBar.style.background = `#dad30c`;
     } else {
-      game.lowHpSound.loop = true;
-      game.lowHpSound.play();
+      game.sonidoBajo.loop = true;
+      game.sonidoBajo.play();
       healthBar.style.background = `#e03c3c`;
     }
   }
 
-  drawPlayerStatsEmpty() {
+  usuarioVacio() {
     this.playerStatsTarget.innerHTML = '';
   }
 }
@@ -44,14 +44,14 @@ const playerStatsBox = `
 </div>
 `;
 
-class OpponentStats {
+class OponenteEstadisticas {
   constructor() {
-    this.opponentStats = opponentStatsBox;
+    this.OponenteEstadisticas = boxEstadisticasRival;
     this.opponentStatsTarget = document.querySelector('.opponent--stats-box');
-    this.opponentStatsTarget.innerHTML = opponentStatsBox;
+    this.opponentStatsTarget.innerHTML = boxEstadisticasRival;
   }
 
-  drawOpponentStats() {
+  statsOponente() {
     document.querySelector('.opponent--pokemon-name').innerHTML = game.pokemonRival.name;
     document.querySelector('.opponent--pokemon-level').innerHTML = game.pokemonRival.level;
 
@@ -69,7 +69,7 @@ class OpponentStats {
   }
 }
 
-const opponentStatsBox = `
+const boxEstadisticasRival = `
   <div class="opponent--stats-wrapper">
     <p class="opponent--pokemon-name"></p>
     <p class="opponent--pokemon-level"></p>

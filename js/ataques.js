@@ -40,14 +40,14 @@ const ataquesUsuario = async (ev) => {
       game.pokemonRivalArr.shift();
 
       if (game.pokemonRivalArr.length === 0 && game.pokemonRival.trainer === 'Bonnie') {
-        return game.screen.drawMasterWonScreen();
+        return game.screen.ganadorDoblePantalla();
       }
 
       if (game.pokemonRivalArr.length === 0) return game.screen.pantallaGanador();
       document.querySelector('.screen').insertAdjacentHTML('afterbegin', "<div class='overlay-fade-in'></div>");
 
       game.pokemonRival = game.pokemonRivalArr[0];
-      game.drawNextTrainerScreen();
+      game.pantallaProxEntrenador();
       return;
     }
 
@@ -57,11 +57,11 @@ const ataquesUsuario = async (ev) => {
   });
 };
 
-const opponentAttacks = async () => {
+const ataquesOponente = async () => {
   if (game.opponentBag[0].quantity > 0 && game.pokemonRival.healthPercent < 50) {
     if (Math.ceil(Math.random() * 2) === 2) {
       await game.pokemonRival.restoreHealth(game.pokemonRival, game.opponentBag);
-      game.menu.drawDefaultMenu(game.pokemonUsuario);
+      game.menu.valorMenuDef(game.pokemonUsuario);
       return;
     }
   }
@@ -95,9 +95,9 @@ const opponentAttacks = async () => {
     );
   }
 
-  if (game.pokemonUsuario.health > 0) return game.menu.drawDefaultMenu(game.pokemonUsuario);
+  if (game.pokemonUsuario.health > 0) return game.menu.valorMenuDef(game.pokemonUsuario);
 
   setTimeout(() => {
-    game.screen.drawLostScreen();
+    game.screen.pantallaPerdedor();
   }, 500);
 };

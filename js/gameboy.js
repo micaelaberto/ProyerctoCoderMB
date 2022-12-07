@@ -1,10 +1,10 @@
 class Device {
   constructor() {
     this.device = gameBoyAdvance;
-    this.drawDevice();
+    this.dispositivo();
   }
 
-  drawDevice() {
+  dispositivo() {
     const app = document.getElementById('app');
     app.innerHTML = this.device;
   }

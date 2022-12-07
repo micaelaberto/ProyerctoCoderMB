@@ -7,8 +7,8 @@ class Pokemon {
     pokemon.health = pokemon.health - attack.danio;
     if (pokemon.health <= 0) pokemon.health = 0;
     pokemon.healthPercent = (pokemon.health / pokemon.maxHealth) * 80;
-    game.opponentStats.drawOpponentStats(game.pokemonRival);
-    game.playerStats.drawPlayerStats(game.pokemonUsuario);
+    game.oponenteEstadisticas.statsOponente(game.pokemonRival);
+    game.playerStats.usuarioStats(game.pokemonUsuario);
   }
 
   async restoreHealth(pokemon, bag) {
@@ -16,7 +16,7 @@ class Pokemon {
       const potion = bag[0];
       if (potion.quantity === 0) {
         await game.menu.comentariosMenu(`Sin pociones`, 2000);
-        return game.menu.drawDefaultMenu(game.pokemonUsuario);
+        return game.menu.valorMenuDef(game.pokemonUsuario);
       }
 
       potion.quantity--;
@@ -27,8 +27,8 @@ class Pokemon {
       healSound.volume = 0.2;
       healSound.play();
       pokemon.healthPercent = (pokemon.health / pokemon.maxHealth) * 80;
-      game.opponentStats.drawOpponentStats();
-      game.playerStats.drawPlayerStats();
+      game.oponenteEstadisticas.statsOponente();
+      game.playerStats.usuarioStats();
       await game.menu.comentariosMenu(
         `${pokemon.trainer} uso pociones y se curo ${potion.energy} hp de ${pokemon.name}`
       );
@@ -49,7 +49,7 @@ class Pokemon {
     screen.insertAdjacentHTML('beforeend', elementString);
   }
 
-  drawOpponentPokemon() {
+  pokemonOponente() {
     const screen = document.querySelector('.screen');
     const elementString = `
         <div class="pokemonRival" style="width: 100px; height: 100px; left: ${this.x}px; bottom: ${this.y}px;"">  

@@ -11,7 +11,7 @@ class MenuEvents {
           if (ev.target.closest('div').classList.contains('btn--fight')) {
             game.menu.drawFightMenu(game.pokemonUsuario);
           } else if (ev.target.closest('div').classList.contains('btn--bag')) {
-            game.menu.drawBagMenu(game.pokemonUsuario);
+            game.menu.menuBolsa(game.pokemonUsuario);
           } else if (ev.target.closest('div').classList.contains('btn--run')) {
             game.screen.drawFadeInScreen();
             const runawaySound = new Audio('./sounds/runaway.mp3');
@@ -19,7 +19,7 @@ class MenuEvents {
             game.battleSound.pause();
             runawaySound.play();
             setTimeout(() => {
-              game.drawWelcomeScreen();
+              game.pantallaBienvenida();
             }, 1500);
           }
         });
@@ -49,9 +49,9 @@ class MenuEvents {
 
         button.addEventListener('click', async (ev) => {
           if (ev.target.getAttribute('data-attack-type') === 'button')
-            return game.menu.drawDefaultMenu(game.pokemonUsuario);
+            return game.menu.valorMenuDef(game.pokemonUsuario);
           await ataquesUsuario(ev);
-          await opponentAttacks();
+          await ataquesOponente();
         });
       });
 
@@ -79,9 +79,9 @@ class MenuEvents {
 
         button.addEventListener('click', async (ev) => {
           if (ev.target.getAttribute('data-attack-type') === 'button')
-            return game.menu.drawDefaultMenu(game.pokemonUsuario);
-          await game.pokemonUsuario.restoreHealth(game.pokemonUsuario, game.playerBag);
-          opponentAttacks();
+            return game.menu.valorMenuDef(game.pokemonUsuario);
+          await game.pokemonUsuario.restoreHealth(game.pokemonUsuario, game.bolsaUsuario);
+          ataquesOponente();
         });
       });
 

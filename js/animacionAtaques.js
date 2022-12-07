@@ -118,7 +118,7 @@ const animacionAtaqueUsuario = (attack) => {
   });
 };
 
-const opponentTackleAnimation = () => {
+const animacionTackle = () => {
   const pokemonRival = document.querySelector('.pokemonRival img');
   const pokemonUsuario = document.querySelector('.pokemonUsuario img');
 
@@ -131,7 +131,7 @@ const opponentTackleAnimation = () => {
   }, 750);
 };
 
-const fireAttack = (target) => {
+const fireAtaque = (target) => {
   if (target === 'player') {
   } else {
     const pokemonRival = document.querySelector('.pokemonRival');

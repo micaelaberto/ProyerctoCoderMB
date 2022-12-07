@@ -4,7 +4,7 @@ class Screen {
     this.screenTarget = document.querySelector('.screen');
   }
 
-  drawBlackScreen() {
+  pantallaNegra() {
     this.screenTarget.innerHTML = blackScreen;
   }
 
@@ -24,7 +24,7 @@ class Screen {
     }, 1500);
   }
 
-  drawIntroScreen() {
+  pantallaIntro() {
     this.screenTarget.innerHTML = introScreen;
     const audio = new Audio('./sounds/gameboy_start.mp3');
     audio.volume = 0.2;
@@ -32,8 +32,8 @@ class Screen {
     game.sound.play();
   }
 
-  drawWelcomeScreen() {
-    game.lowHpSound.pause();
+  pantallaBienvenida() {
+    game.sonidoBajo.pause();
     this.screenTarget.innerHTML = welcomeScreen;
     const audio = new Audio('./sounds/opening.mp3');
     audio.volume = 0.1;
@@ -42,15 +42,15 @@ class Screen {
     game.sound.play();
 
     const listenToKey = () => {
-      game.screen.drawChoosePokemonScreen();
+      game.screen.pantallaEleccionPokemon();
       window.removeEventListener('click', listenToKey);
     };
 
     window.addEventListener('click', listenToKey);
   }
 
-  drawChoosePokemonScreen() {
-    game.lowHpSound.pause();
+  pantallaEleccionPokemon() {
+    game.sonidoBajo.pause();
     this.screenTarget.innerHTML = choosePokemonScreen;
     document.querySelectorAll('.pokeball-wrapper').forEach((el) => {
       el.addEventListener('click', (ev) => {
@@ -62,13 +62,13 @@ class Screen {
         } else {
           game.pokemonUsuario = new Bulbasaur('Ash');
         }
-        game.drawChooseDifficultyScreen();
+        game.pantallaEleccionDificultad();
       });
     });
   }
 
-  drawChooseDifficultyScreen() {
-    game.lowHpSound.pause();
+  pantallaEleccionDificultad() {
+    game.sonidoBajo.pause();
     this.screenTarget.innerHTML = chooseDifficultyScreen;
     document.querySelectorAll('.trainer-wrapper').forEach((el) => {
       el.addEventListener('click', (ev) => {
@@ -80,7 +80,7 @@ class Screen {
             new Geodude(game.opponentTrainer),
             new Jigglypuff(game.opponentTrainer),
           ];
-          game.playerBag = [{ name: 'Potion', quantity: 3, energy: 50, info: 'Heals 50 hp' }];
+          game.bolsaUsuario = [{ name: 'Potion', quantity: 3, energy: 50, info: 'Heals 50 hp' }];
           game.opponentBag = [{ name: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-forrest.png")';
         } else if (difficulty === 'medium') {
@@ -90,7 +90,7 @@ class Screen {
             new Gengar(game.opponentTrainer),
             new Gyarados(game.opponentTrainer),
           ];
-          game.playerBag = [{ name: 'Potion', quantity: 4, energy: 50, info: 'Heals 50 hp' }];
+          game.bolsaUsuario = [{ name: 'Potion', quantity: 4, energy: 50, info: 'Heals 50 hp' }];
           game.opponentBag = [{ name: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-street.png")';
         } else {
@@ -102,16 +102,16 @@ class Screen {
             new Mewtu(game.opponentTrainer),
             new Glitch(game.opponentTrainer),
           ];
-          game.playerBag = [{ name: 'Potion', quantity: 5, energy: 50, info: 'Heals 50 hp' }];
+          game.bolsaUsuario = [{ name: 'Potion', quantity: 5, energy: 50, info: 'Heals 50 hp' }];
           game.opponentBag = [{ name: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-final.png")';
         }
-        game.drawBattleScreen();
+        game.pantallaBatalla();
       });
     });
   }
 
-  drawBattleScreen() {
+  pantallaBatalla() {
     this.screenTarget.innerHTML = screen;
     this.drawFadeOutScreen();
 
@@ -120,7 +120,7 @@ class Screen {
     game.battleSound.play();
   }
 
-  drawNextTrainerScreen() {
+  pantallaProxEntrenador() {
     this.screenTarget.innerHTML = nextTrainerScreen
       .replace('#{opponentTrainer}', game.pokemonRival.trainer)
       .replace('#{pokemon}', game.pokemonRival.name);
@@ -128,16 +128,16 @@ class Screen {
     document.querySelectorAll('.deciscion--btn').forEach((el) => {
       el.addEventListener('click', (ev) => {
         if (ev.target.innerHTML === 'Continuar') {
-          game.drawBattleScreen();
+          game.pantallaBatalla();
         } else {
-          this.drawLostScreen();
+          this.pantallaPerdedor();
         }
       });
     });
   }
 
-  drawMasterWonScreen() {
-    game.lowHpSound.pause();
+  ganadorDoblePantalla() {
+    game.sonidoBajo.pause();
     this.screenTarget.innerHTML = masterWonScreen;
     const audio = new Audio('./sounds/win.mp3');
     audio.volume = 0.2;
@@ -147,7 +147,7 @@ class Screen {
   }
 
   pantallaGanador() {
-    game.lowHpSound.pause();
+    game.sonidoBajo.pause();
     this.screenTarget.innerHTML = wonScreen;
     const audio = new Audio('./sounds/win.mp3');
     audio.volume = 0.2;
@@ -156,8 +156,8 @@ class Screen {
     game.sound.play();
   }
 
-  drawLostScreen() {
-    game.lowHpSound.pause();
+  pantallaPerdedor() {
+    game.sonidoBajo.pause();
     this.screenTarget.innerHTML = lostScreen;
   }
 }
@@ -188,7 +188,7 @@ const nextTrainerScreen = `
 const lostScreen = `
   <div class="welcome--box">
       <h1>PERDISTE!</h1>
-      <h3 class="deciscion--btn" onclick="game.screen.drawWelcomeScreen();">Restart</h3>
+      <h3 class="deciscion--btn" onclick="game.screen.pantallaBienvenida();">Restart</h3>
   </div>
 `;
 

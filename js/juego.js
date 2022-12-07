@@ -8,45 +8,45 @@ class Game {
     this.sound;
     this.audioLevel = 0.2;
     this.battleSound = new Audio('./sounds/battle_trainer.mp3');
-    this.lowHpSound = new Audio('./sounds/lowhp.wav');
+    this.sonidoBajo = new Audio('./sounds/lowhp.wav');
   }
 
-  drawBlackScreen() {
-    this.screen.drawBlackScreen();
+  pantallaNegra() {
+    this.screen.pantallaNegra();
   }
 
-  drawWelcomeScreen() {
-    this.screen.drawWelcomeScreen();
+  pantallaBienvenida() {
+    this.screen.pantallaBienvenida();
   }
 
-  drawIntroScreen() {
-    this.screen.drawIntroScreen();
+  pantallaIntro() {
+    this.screen.pantallaIntro();
   }
 
-  drawBattleScreen() {
+  pantallaBatalla() {
     this.opponentTrainer = 'Bonnie';
-    this.screen.drawBattleScreen();
+    this.screen.pantallaBatalla();
     this.menu = new Menu();
     this.pokemonUsuario.drawPokemon();
     this.pokemonRival = this.pokemonRivalArr[0];
-    this.pokemonRival.drawOpponentPokemon();
+    this.pokemonRival.pokemonOponente();
 
-    this.menu.drawDefaultMenu(this.pokemonUsuario);
+    this.menu.valorMenuDef(this.pokemonUsuario);
     this.playerStats = new PlayerStats();
-    this.opponentStats = new OpponentStats();
-    this.playerStats.drawPlayerStats(this.pokemonUsuario);
-    this.opponentStats.drawOpponentStats(this.pokemonRival);
+    this.oponenteEstadisticas = new OponenteEstadisticas();
+    this.playerStats.usuarioStats(this.pokemonUsuario);
+    this.oponenteEstadisticas.statsOponente(this.pokemonRival);
   }
 
-  drawNextTrainerScreen() {
-    this.screen.drawNextTrainerScreen();
+  pantallaProxEntrenador() {
+    this.screen.pantallaProxEntrenador();
   }
 
-  drawChooseDifficultyScreen() {
-    this.screen.drawChooseDifficultyScreen();
+  pantallaEleccionDificultad() {
+    this.screen.pantallaEleccionDificultad();
   }
 
-  drawChoosePokemonScreen() {
-    this.screen.drawChoosePokemonScreen();
+  pantallaEleccionPokemon() {
+    this.screen.pantallaEleccionPokemon();
   }
 }

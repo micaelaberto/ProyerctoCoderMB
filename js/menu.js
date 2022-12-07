@@ -7,7 +7,7 @@ class Menu {
     this.state = 0;
   }
 
-  drawDefaultMenu(pokemon) {
+  valorMenuDef(pokemon) {
     this.menuTarget.innerHTML = '';
     this.menu = defaultMenu.replace('#{pokemonName}', pokemon.name);
     this.menuIdentifier = 'defaultMenu';
@@ -29,9 +29,9 @@ class Menu {
     });
   }
 
-  drawBagMenu() {
+  menuBolsa() {
     let items = '';
-    game.playerBag.forEach((el, index) => {
+    game.bolsaUsuario.forEach((el, index) => {
       items += `<p class="btn--attack" data-item-id=${index} data-item-quantity=${el.quantity} data-item-type=${el.name} data-item-info="${el.info}"  >${el.quantity}x ${el.name}</p>`;
     });
     items += `<p class="btn--attack" data-attack-type="button">Atrás</p>`;
