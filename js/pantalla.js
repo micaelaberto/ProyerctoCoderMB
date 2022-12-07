@@ -94,8 +94,7 @@ class Screen {
           game.opponentBag = [{ name: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-street.png")';
         } else {
-          game.opponentTrainer = 'Ash';
-          console.log(game.opponentTrainer);
+          game.opponentTrainer = 'Jessie';
 
           game.pokemonRivalArr = [
             new Venusaur(game.opponentTrainer),

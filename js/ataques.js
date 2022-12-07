@@ -19,7 +19,6 @@ const ataquesUsuario = async (ev) => {
     ) {
       crit = true;
       attack.danio = attack.danio * 1.5;
-      console.log(attack.danio);
     }
 
     animacionAtaqueUsuario(attack);
