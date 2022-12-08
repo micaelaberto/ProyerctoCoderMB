@@ -24,7 +24,7 @@ class Game {
   }
 
   pantallaBatalla() {
-    this.opponentTrainer = 'Bonnie';
+    this.entrenadorRival = 'Bonnie';
     this.screen.pantallaBatalla();
     this.menu = new Menu();
     this.pokemonUsuario.drawPokemon();

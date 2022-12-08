@@ -74,32 +74,32 @@ class Screen {
       el.addEventListener('click', (ev) => {
         const difficulty = ev.target.closest('div').getAttribute('data-difficulty');
         if (difficulty === 'easy') {
-          game.opponentTrainer = 'Bonnie';
+          game.entrenadorRival = 'Bonnie';
           game.pokemonRivalArr = [
-            new Rattata(game.opponentTrainer),
-            new Geodude(game.opponentTrainer),
-            new Jigglypuff(game.opponentTrainer),
+            new Rattata(game.entrenadorRival),
+            new Geodude(game.entrenadorRival),
+            new Jigglypuff(game.entrenadorRival),
           ];
           game.bolsaUsuario = [{ nombre: 'Potion', quantity: 3, energy: 50, info: 'Heals 50 hp' }];
           game.bolsaRival = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-forrest.png")';
         } else if (difficulty === 'medium') {
-          game.opponentTrainer = 'Garry';
+          game.entrenadorRival = 'Garry';
           game.pokemonRivalArr = [
-            new Poliwrath(game.opponentTrainer),
-            new Gengar(game.opponentTrainer),
-            new Gyarados(game.opponentTrainer),
+            new Poliwrath(game.entrenadorRival),
+            new Gengar(game.entrenadorRival),
+            new Gyarados(game.entrenadorRival),
           ];
           game.bolsaUsuario = [{ nombre: 'Potion', quantity: 4, energy: 50, info: 'Heals 50 hp' }];
           game.bolsaRival = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-street.png")';
         } else {
-          game.opponentTrainer = 'Jessie';
+          game.entrenadorRival = 'Jessie';
 
           game.pokemonRivalArr = [
-            new Venusaur(game.opponentTrainer),
-            new Mewtu(game.opponentTrainer),
-            new Glitch(game.opponentTrainer),
+            new Venusaur(game.entrenadorRival),
+            new Mewtu(game.entrenadorRival),
+            new Glitch(game.entrenadorRival),
           ];
           game.bolsaUsuario = [{ nombre: 'Potion', quantity: 5, energy: 50, info: 'Heals 50 hp' }];
           game.bolsaRival = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
@@ -121,7 +121,7 @@ class Screen {
 
   pantallaProxEntrenador() {
     this.screenTarget.innerHTML = nextTrainerScreen
-      .replace('#{opponentTrainer}', game.pokemonRival.trainer)
+      .replace('#{entrenadorRival}', game.pokemonRival.trainer)
       .replace('#{pokemon}', game.pokemonRival.nombre);
 
     document.querySelectorAll('.deciscion--btn').forEach((el) => {
@@ -176,7 +176,7 @@ const blackScreen = `
 const nextTrainerScreen = `
   <div class="welcome--box">
       <h1>GANASTE!</h1>
-      <p style="width: 90%; text-align:center">#{opponentTrainer} eligio #{pokemon} para pelear!</p>
+      <p style="width: 90%; text-align:center">#{entrenadorRival} eligio #{pokemon} para pelear!</p>
       <div style="display:flex; gap: 60px">
         <h3 class="deciscion--btn">Continuar</h3>
         <h3 class="deciscion--btn">SALIR</h3>
@@ -235,7 +235,7 @@ const chooseDifficultyScreen = `
         <p>Garry</p>
       </div>
         <div class="trainer-wrapper" data-difficulty="hard">
-          <p>Hard</p>
+          <p>Difícil</p>
           <img style="width:50px;" src="./imagenes/jessie.webp">
           <p>Jessie</p>
         </div>
