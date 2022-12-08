@@ -26,11 +26,11 @@ const ataquesUsuario = async (ev) => {
 
     if (!crit) {
       await game.menu.comentariosMenu(
-        `${game.pokemonUsuario.name} uso ${attack.name} e hizo daño por ${attack.danio} hp!`
+        `${game.pokemonUsuario.nombre} uso ${attack.nombre} e hizo daño por ${attack.danio} hp!`
       );
     } else {
       await game.menu.comentariosMenu(
-        `${game.pokemonUsuario.name} uso ${attack.name} y logro un ataque CRITICO por ${attack.danio} hp!`,
+        `${game.pokemonUsuario.nombre} uso ${attack.nombre} y logro un ataque CRITICO por ${attack.danio} hp!`,
         3000
       );
     }
@@ -85,11 +85,11 @@ const ataquesOponente = async () => {
 
   if (!crit) {
     await game.menu.comentariosMenu(
-      `${game.pokemonRival.name} uso ${attack.name} e hizo daño por ${attack.danio} hp!`
+      `${game.pokemonRival.nombre} uso ${attack.nombre} e hizo daño por ${attack.danio} hp!`
     );
   } else {
     await game.menu.comentariosMenu(
-      `${game.pokemonRival.name} uso ${attack.name} e hizo un daño CRITICO por ${attack.danio} hp!`,
+      `${game.pokemonRival.nombre} uso ${attack.nombre} e hizo un daño CRITICO por ${attack.danio} hp!`,
       3000
     );
   }

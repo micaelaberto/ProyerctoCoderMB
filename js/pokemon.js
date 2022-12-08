@@ -30,7 +30,7 @@ class Pokemon {
       game.oponenteEstadisticas.statsOponente();
       game.playerStats.usuarioStats();
       await game.menu.comentariosMenu(
-        `${pokemon.trainer} uso pociones y se curo ${potion.energy} hp de ${pokemon.name}`
+        `${pokemon.trainer} uso pociones y se curo ${potion.energy} hp de ${pokemon.nombre}`
       );
       resolve(true);
     });
@@ -63,12 +63,12 @@ class Pokemon {
 class Charmander extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Charmander';
+    this.nombre = 'Charmander';
     this.attacks = [
-      { name: 'Tackle', func: 'attack', danio: 30, type: 'Normal', crit: 2 },
-      { name: 'Ember', func: 'attack', danio: 40, type: 'Fire', crit: 2, image: 'ember.gif', sound: 'ember.wav' },
-      { name: 'Scratch', func: 'attack', danio: 30, type: 'Normal', crit: 5, image: 'slash.gif' },
-      { name: 'Atrás', func: 'button', type: 'Button' },
+      { nombre: 'Tackle', func: 'attack', danio: 30, type: 'Normal', crit: 2 },
+      { nombre: 'Ember', func: 'attack', danio: 40, type: 'Fire', crit: 2, image: 'ember.gif', sound: 'ember.wav' },
+      { nombre: 'Scratch', func: 'attack', danio: 30, type: 'Normal', crit: 5, image: 'slash.gif' },
+      { nombre: 'Atrás', func: 'button', type: 'Button' },
     ];
     this.type = 'Fire';
     this.health = 120;
@@ -85,12 +85,12 @@ class Charmander extends Pokemon {
 class Squirtle extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Squirtle';
+    this.nombre = 'Squirtle';
     this.attacks = [
-      { name: 'Tackle', func: 'attack', danio: 30, type: 'Normal', crit: 2 },
-      { name: 'Scratch', func: 'attack', danio: 30, type: 'Normal', crit: 4, image: 'slash.gif' },
-      { name: 'Waterball', func: 'attack', danio: 40, type: 'Water', crit: 3, image: 'water.gif' },
-      { name: 'Atrás', func: 'button', type: 'Button' },
+      { nombre: 'Tackle', func: 'attack', danio: 30, type: 'Normal', crit: 2 },
+      { nombre: 'Scratch', func: 'attack', danio: 30, type: 'Normal', crit: 4, image: 'slash.gif' },
+      { nombre: 'Waterball', func: 'attack', danio: 40, type: 'Water', crit: 3, image: 'water.gif' },
+      { nombre: 'Atrás', func: 'button', type: 'Button' },
     ];
     this.type = 'Water';
     this.health = 120;
@@ -108,12 +108,12 @@ class Bulbasaur extends Pokemon {
   constructor(trainer) {
     super(trainer);
 
-    this.name = 'Bulbasaur';
+    this.nombre = 'Bulbasaur';
     this.attacks = [
-      { name: 'Tackle', func: 'attack', danio: 30, type: 'Normal', crit: 2 },
-      { name: 'Scratch', func: 'attack', danio: 40, type: 'Normal', crit: 3, image: 'slash.gif' },
-      { name: 'Seed Bomb', func: 'attack', danio: 40, type: 'Grass', crit: 4, image: 'leaf_attack.gif' },
-      { name: 'Atrás', func: 'button', type: 'Button' },
+      { nombre: 'Tackle', func: 'attack', danio: 30, type: 'Normal', crit: 2 },
+      { nombre: 'Scratch', func: 'attack', danio: 40, type: 'Normal', crit: 3, image: 'slash.gif' },
+      { nombre: 'Seed Bomb', func: 'attack', danio: 40, type: 'Grass', crit: 4, image: 'leaf_attack.gif' },
+      { nombre: 'Atrás', func: 'button', type: 'Button' },
     ];
     this.type = 'Grass';
     this.health = 120;
@@ -130,12 +130,12 @@ class Bulbasaur extends Pokemon {
 class Jigglypuff extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Jigglypuff';
+    this.nombre = 'Jigglypuff';
     this.attacks = [
-      { name: 'Tackle', danio: 20, type: 'Normal' },
-      { name: 'Tackle', danio: 30, type: 'Normal' },
-      { name: 'Pound', danio: 40, type: 'Normal' },
-      { name: 'Slam', danio: 50, type: 'Normal' },
+      { nombre: 'Tackle', danio: 20, type: 'Normal' },
+      { nombre: 'Tackle', danio: 30, type: 'Normal' },
+      { nombre: 'Pound', danio: 40, type: 'Normal' },
+      { nombre: 'Slam', danio: 50, type: 'Normal' },
     ];
     this.type = 'Normal';
     this.health = 100;
@@ -152,12 +152,12 @@ class Jigglypuff extends Pokemon {
 class Rattata extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Rattata';
+    this.nombre = 'Rattata';
     this.attacks = [
-      { name: 'Tackle', danio: 10, type: 'Normal' },
-      { name: 'Tackle', danio: 20, type: 'Normal' },
-      { name: 'Bite', danio: 30, type: 'Normal' },
-      { name: 'Crunch', danio: 40, type: 'Normal' },
+      { nombre: 'Tackle', danio: 10, type: 'Normal' },
+      { nombre: 'Tackle', danio: 20, type: 'Normal' },
+      { nombre: 'Bite', danio: 30, type: 'Normal' },
+      { nombre: 'Crunch', danio: 40, type: 'Normal' },
     ];
     this.type = 'Normal';
     this.health = 100;
@@ -175,12 +175,12 @@ class Rattata extends Pokemon {
 class Geodude extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Geodude';
+    this.nombre = 'Geodude';
     this.attacks = [
-      { name: 'Sand', danio: 10, type: 'Normal' },
-      { name: 'Headnut', danio: 20, type: 'Normal' },
-      { name: 'Tackle', danio: 30, type: 'Normal' },
-      { name: 'Explosion', danio: 40, type: 'Normal' },
+      { nombre: 'Sand', danio: 10, type: 'Normal' },
+      { nombre: 'Headnut', danio: 20, type: 'Normal' },
+      { nombre: 'Tackle', danio: 30, type: 'Normal' },
+      { nombre: 'Explosion', danio: 40, type: 'Normal' },
     ];
     this.type = 'Rock';
     this.health = 100;
@@ -197,12 +197,12 @@ class Geodude extends Pokemon {
 class Alakazam extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Alakazam';
+    this.nombre = 'Alakazam';
     this.attacks = [
-      { name: 'Kinesis', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Disable', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Kinesis', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Psychic', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Kinesis', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Disable', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Kinesis', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Psychic', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Psy';
     this.health = 200;
@@ -219,12 +219,12 @@ class Alakazam extends Pokemon {
 class Gengar extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Gengar';
+    this.nombre = 'Gengar';
     this.attacks = [
-      { name: 'Curse', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Hex', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Lick', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Pulse', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Curse', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Hex', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Lick', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Pulse', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Psy';
     this.health = 200;
@@ -241,12 +241,12 @@ class Gengar extends Pokemon {
 class Aerodactyl extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Aerodactyl';
+    this.nombre = 'Aerodactyl';
     this.attacks = [
-      { name: 'Bite', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Slash', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Crunch', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Psybeam', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Bite', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Slash', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Crunch', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Psybeam', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Normal';
     this.health = 200;
@@ -263,12 +263,12 @@ class Aerodactyl extends Pokemon {
 class Gyarados extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Gyarados';
+    this.nombre = 'Gyarados';
     this.attacks = [
-      { name: 'Bite', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Slash', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Crunch', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Aqua Tail', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Bite', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Slash', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Crunch', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Aqua Tail', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Water';
     this.health = 200;
@@ -285,12 +285,12 @@ class Gyarados extends Pokemon {
 class Poliwrath extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Poliwrath';
+    this.nombre = 'Poliwrath';
     this.attacks = [
-      { name: 'Bite', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Slash', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Crunch', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Aqua Tail', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Bite', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Slash', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Crunch', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Aqua Tail', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Water';
     this.health = 200;
@@ -308,12 +308,12 @@ class Poliwrath extends Pokemon {
 class Blastoise extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Blastoise';
+    this.nombre = 'Blastoise';
     this.attacks = [
-      { name: 'Tail', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Headnut', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Bite', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Blast', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Tail', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Headnut', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Bite', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Blast', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Water';
     this.health = 200;
@@ -331,12 +331,12 @@ class Blastoise extends Pokemon {
 class Venusaur extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Venusaur';
+    this.nombre = 'Venusaur';
     this.attacks = [
-      { name: 'Tail', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Headnut', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Bite', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Solar', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Tail', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Headnut', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Bite', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Solar', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Grass';
     this.health = 200;
@@ -354,12 +354,12 @@ class Venusaur extends Pokemon {
 class Mewtu extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Mewtu';
+    this.nombre = 'Mewtu';
     this.attacks = [
-      { name: 'Tackle', danio: 10, type: 'Normal', crit: 3 },
-      { name: 'Disable', danio: 20, type: 'Normal', crit: 3 },
-      { name: 'Swift', danio: 30, type: 'Normal', crit: 3 },
-      { name: 'Amnesia', danio: 40, type: 'Animated', crit: 3 },
+      { nombre: 'Tackle', danio: 10, type: 'Normal', crit: 3 },
+      { nombre: 'Disable', danio: 20, type: 'Normal', crit: 3 },
+      { nombre: 'Swift', danio: 30, type: 'Normal', crit: 3 },
+      { nombre: 'Amnesia', danio: 40, type: 'Animated', crit: 3 },
     ];
     this.type = 'Psy';
     this.health = 250;
@@ -376,12 +376,12 @@ class Mewtu extends Pokemon {
 class Glitch extends Pokemon {
   constructor(trainer) {
     super(trainer);
-    this.name = 'Glitch';
+    this.nombre = 'Glitch';
     this.attacks = [
-      { name: 'Tackle', danio: 10, type: 'Normal', crit: 2 },
-      { name: 'Swift', danio: 20, type: 'Normal', crit: 2 },
-      { name: 'Ironhacker', danio: 40, type: 'Animated', crit: 2 },
-      { name: 'Ironhacker', danio: 40, type: 'Animated', crit: 2 },
+      { nombre: 'Tackle', danio: 10, type: 'Normal', crit: 2 },
+      { nombre: 'Swift', danio: 20, type: 'Normal', crit: 2 },
+      { nombre: 'Ironhacker', danio: 40, type: 'Animated', crit: 2 },
+      { nombre: 'Ironhacker', danio: 40, type: 'Animated', crit: 2 },
     ];
     this.type = 'psy';
     this.health = 120;

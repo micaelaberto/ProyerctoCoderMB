@@ -9,7 +9,7 @@ class Menu {
 
   valorMenuDef(pokemon) {
     this.menuTarget.innerHTML = '';
-    this.menu = defaultMenu.replace('#{pokemonName}', pokemon.name);
+    this.menu = defaultMenu.replace('#{pokemonName}', pokemon.nombre);
     this.menuIdentifier = 'defaultMenu';
     this.menuTarget.innerHTML = '';
     this.menuTarget.innerHTML = this.menu;
@@ -32,7 +32,7 @@ class Menu {
   menuBolsa() {
     let items = '';
     game.bolsaUsuario.forEach((el, index) => {
-      items += `<p class="btn--attack" data-item-id=${index} data-item-quantity=${el.quantity} data-item-type=${el.name} data-item-info="${el.info}"  >${el.quantity}x ${el.name}</p>`;
+      items += `<p class="btn--attack" data-item-id=${index} data-item-quantity=${el.quantity} data-item-type=${el.nombre} data-item-info="${el.info}"  >${el.quantity}x ${el.nombre}</p>`;
     });
     items += `<p class="btn--attack" data-attack-type="button">Atrás</p>`;
 
@@ -47,9 +47,9 @@ class Menu {
     let attackList = '';
     pokemon.attacks.forEach((attack, index) => {
       if (attack.func === 'attack') {
-        attackList += `<p class="btn--attack" data-attack-id=${index} data-attack-type=${attack.type}>${attack.name}</p>`;
+        attackList += `<p class="btn--attack" data-attack-id=${index} data-attack-type=${attack.type}>${attack.nombre}</p>`;
       } else {
-        attackList += `<p class="btn--attack" data-attack-id=${index} data-attack-type="button">${attack.name}</p>`;
+        attackList += `<p class="btn--attack" data-attack-id=${index} data-attack-type="button">${attack.nombre}</p>`;
       }
     });
     this.menuTarget.innerHTML = '';

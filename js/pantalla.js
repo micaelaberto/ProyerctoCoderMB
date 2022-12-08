@@ -80,8 +80,8 @@ class Screen {
             new Geodude(game.opponentTrainer),
             new Jigglypuff(game.opponentTrainer),
           ];
-          game.bolsaUsuario = [{ name: 'Potion', quantity: 3, energy: 50, info: 'Heals 50 hp' }];
-          game.opponentBag = [{ name: 'Potion', quantity: 3, energy: 50 }];
+          game.bolsaUsuario = [{ nombre: 'Potion', quantity: 3, energy: 50, info: 'Heals 50 hp' }];
+          game.opponentBag = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-forrest.png")';
         } else if (difficulty === 'medium') {
           game.opponentTrainer = 'Garry';
@@ -90,8 +90,8 @@ class Screen {
             new Gengar(game.opponentTrainer),
             new Gyarados(game.opponentTrainer),
           ];
-          game.bolsaUsuario = [{ name: 'Potion', quantity: 4, energy: 50, info: 'Heals 50 hp' }];
-          game.opponentBag = [{ name: 'Potion', quantity: 3, energy: 50 }];
+          game.bolsaUsuario = [{ nombre: 'Potion', quantity: 4, energy: 50, info: 'Heals 50 hp' }];
+          game.opponentBag = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-street.png")';
         } else {
           game.opponentTrainer = 'Jessie';
@@ -101,8 +101,8 @@ class Screen {
             new Mewtu(game.opponentTrainer),
             new Glitch(game.opponentTrainer),
           ];
-          game.bolsaUsuario = [{ name: 'Potion', quantity: 5, energy: 50, info: 'Heals 50 hp' }];
-          game.opponentBag = [{ name: 'Potion', quantity: 3, energy: 50 }];
+          game.bolsaUsuario = [{ nombre: 'Potion', quantity: 5, energy: 50, info: 'Heals 50 hp' }];
+          game.opponentBag = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-final.png")';
         }
         game.pantallaBatalla();
@@ -122,7 +122,7 @@ class Screen {
   pantallaProxEntrenador() {
     this.screenTarget.innerHTML = nextTrainerScreen
       .replace('#{opponentTrainer}', game.pokemonRival.trainer)
-      .replace('#{pokemon}', game.pokemonRival.name);
+      .replace('#{pokemon}', game.pokemonRival.nombre);
 
     document.querySelectorAll('.deciscion--btn').forEach((el) => {
       el.addEventListener('click', (ev) => {

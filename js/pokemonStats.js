@@ -9,7 +9,7 @@ class PlayerStats {
     game.sonidoBajo.pause();
     game.sonidoBajo.volume = 0.05;
 
-    document.querySelector('.player--pokemon-name').innerHTML = game.pokemonUsuario.name;
+    document.querySelector('.player--pokemon-name').innerHTML = game.pokemonUsuario.nombre;
     document.querySelector('.player--pokemon-health').innerHTML = game.pokemonUsuario.health;
     document.querySelector('.player--pokemon-level').innerHTML = game.pokemonUsuario.level;
     document.querySelector('.player--pokemon-max-health').innerHTML = game.pokemonUsuario.maxHealth;
@@ -52,7 +52,7 @@ class OponenteEstadisticas {
   }
 
   statsOponente() {
-    document.querySelector('.opponent--pokemon-name').innerHTML = game.pokemonRival.name;
+    document.querySelector('.opponent--pokemon-name').innerHTML = game.pokemonRival.nombre;
     document.querySelector('.opponent--pokemon-level').innerHTML = game.pokemonRival.level;
 
     const healthBar = document.querySelector('.opponent--pokemon-health-bar');
