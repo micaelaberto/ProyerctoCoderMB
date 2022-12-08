@@ -57,9 +57,9 @@ const ataquesUsuario = async (ev) => {
 };
 
 const ataquesOponente = async () => {
-  if (game.opponentBag[0].quantity > 0 && game.pokemonRival.healthPercent < 50) {
+  if (game.bolsaRival[0].quantity > 0 && game.pokemonRival.healthPercent < 50) {
     if (Math.ceil(Math.random() * 2) === 2) {
-      await game.pokemonRival.restoreHealth(game.pokemonRival, game.opponentBag);
+      await game.pokemonRival.restoreHealth(game.pokemonRival, game.bolsaRival);
       game.menu.valorMenuDef(game.pokemonUsuario);
       return;
     }

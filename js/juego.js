@@ -3,11 +3,11 @@ class Game {
     this.device = new Device();
     this.screen = new Screen();
     this.pokemonRivalArr;
-    this.playerBag;
-    this.opponentBag;
+    this.bolsaUsuario;
+    this.bolsaRival;
     this.sound;
     this.audioLevel = 0.2;
-    this.battleSound = new Audio('./sounds/battle_trainer.mp3');
+    this.batallaSonido = new Audio('./sounds/battle_trainer.mp3');
     this.sonidoBajo = new Audio('./sounds/lowhp.wav');
   }
 

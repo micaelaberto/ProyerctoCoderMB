@@ -16,7 +16,7 @@ class MenuEvents {
             game.screen.drawFadeInScreen();
             const runawaySound = new Audio('./sounds/runaway.mp3');
             runawaySound.volume = 0.2;
-            game.battleSound.pause();
+            game.batallaSonido.pause();
             runawaySound.play();
             setTimeout(() => {
               game.pantallaBienvenida();

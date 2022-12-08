@@ -38,7 +38,7 @@ class Screen {
     const audio = new Audio('./sounds/opening.mp3');
     audio.volume = 0.1;
     game.sound = audio;
-    game.battleSound.pause();
+    game.batallaSonido.pause();
     game.sound.play();
 
     const listenToKey = () => {
@@ -81,7 +81,7 @@ class Screen {
             new Jigglypuff(game.opponentTrainer),
           ];
           game.bolsaUsuario = [{ nombre: 'Potion', quantity: 3, energy: 50, info: 'Heals 50 hp' }];
-          game.opponentBag = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
+          game.bolsaRival = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-forrest.png")';
         } else if (difficulty === 'medium') {
           game.opponentTrainer = 'Garry';
@@ -91,7 +91,7 @@ class Screen {
             new Gyarados(game.opponentTrainer),
           ];
           game.bolsaUsuario = [{ nombre: 'Potion', quantity: 4, energy: 50, info: 'Heals 50 hp' }];
-          game.opponentBag = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
+          game.bolsaRival = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-street.png")';
         } else {
           game.opponentTrainer = 'Jessie';
@@ -102,7 +102,7 @@ class Screen {
             new Glitch(game.opponentTrainer),
           ];
           game.bolsaUsuario = [{ nombre: 'Potion', quantity: 5, energy: 50, info: 'Heals 50 hp' }];
-          game.opponentBag = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
+          game.bolsaRival = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
           document.querySelector('.screen').style.backgroundImage = 'url("./imagenes/arena-final.png")';
         }
         game.pantallaBatalla();
@@ -115,8 +115,8 @@ class Screen {
     this.drawFadeOutScreen();
 
     game.sound.pause();
-    game.battleSound.volume = 0.03;
-    game.battleSound.play();
+    game.batallaSonido.volume = 0.03;
+    game.batallaSonido.play();
   }
 
   pantallaProxEntrenador() {
@@ -141,7 +141,7 @@ class Screen {
     const audio = new Audio('./sounds/win.mp3');
     audio.volume = 0.2;
     game.sound = audio;
-    game.battleSound.pause();
+    game.batallaSonido.pause();
     game.sound.play();
   }
 
@@ -151,7 +151,7 @@ class Screen {
     const audio = new Audio('./sounds/win.mp3');
     audio.volume = 0.2;
     game.sound = audio;
-    game.battleSound.pause();
+    game.batallaSonido.pause();
     game.sound.play();
   }
 
