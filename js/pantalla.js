@@ -97,9 +97,9 @@ class Screen {
           game.entrenadorRival = 'Jessie';
 
           game.pokemonRivalArr = [
-            new Venusaur(game.entrenadorRival),
+            new Alakazam(game.entrenadorRival),
             new Mewtu(game.entrenadorRival),
-            new Glitch(game.entrenadorRival),
+            new Venusaur(game.entrenadorRival),
           ];
           game.bolsaUsuario = [{ nombre: 'Potion', quantity: 5, energy: 50, info: 'Heals 50 hp' }];
           game.bolsaRival = [{ nombre: 'Potion', quantity: 3, energy: 50 }];
